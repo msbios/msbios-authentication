@@ -42,14 +42,4 @@ class Module implements ModuleInterface
             ],
         ];
     }
-
-    /**
-     * @param IdentityInterface $identity
-     * @param $inputPassword
-     * @return bool
-     */
-    public static function verifyCredential(IdentityInterface $identity, $inputPassword)
-    {
-        return (new Bcrypt)->verify($inputPassword, $identity->getPassword());
-    }
 }
