@@ -13,8 +13,7 @@ return [
     'service_manager' => [
 
         'factories' => [
-            AuthenticationService::class =>
-                InvokableFactory::class
+            AuthenticationService::class => InvokableFactory::class
         ]
     ],
 
