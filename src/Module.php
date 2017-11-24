@@ -6,7 +6,6 @@
 namespace MSBios\Authentication;
 
 use MSBios\ModuleInterface;
-use Zend\Crypt\Password\Bcrypt;
 use Zend\Loader\AutoloaderFactory;
 use Zend\Loader\StandardAutoloader;
 
@@ -17,7 +16,7 @@ use Zend\Loader\StandardAutoloader;
 class Module implements ModuleInterface
 {
     /** @const VERSION */
-    const VERSION = '1.0.2';
+    const VERSION = '1.0.3';
 
     /**
      * @return mixed
