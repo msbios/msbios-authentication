@@ -6,6 +6,7 @@
 namespace MSBios\Authentication\Adapter;
 
 use Zend\Authentication\Adapter\DbTable\CallbackCheckAdapter;
+use Zend\Crypt\Password\Bcrypt;
 use Zend\Db\Adapter\Adapter as DbAdapter;
 
 /**
@@ -29,9 +30,8 @@ class ResourceAdapter extends CallbackCheckAdapter
         $credentialColumn = null,
         $credentialValidationCallback = null
     ) {
-        parent::__construct($zendDb, $tableName, $identityColumn, $credentialColumn, function ($a, $b) {
-            var_dump($a, $b);
-            die();
+        parent::__construct($zendDb, $tableName, $identityColumn, $credentialColumn, function ($hash, $password) {
+            return (new Bcrypt())->verify($password, $hash);
         });
     }
 }

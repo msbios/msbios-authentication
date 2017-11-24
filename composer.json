@@ -24,7 +24,8 @@
     }
   },
   "require": {
-    "zendframework/zend-authentication": "^2.5"
+    "zendframework/zend-authentication": "^2.5",
+    "zendframework/zend-crypt": "^3.2"
   },
   "require-dev": {
     "msbios/resource": "^1.0",
