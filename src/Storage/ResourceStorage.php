@@ -5,11 +5,13 @@
  */
 namespace MSBios\Authentication\Storage;
 
+use Zend\Authentication\Storage\Session;
+
 /**
  * Class ResourceStorage
  * @package MSBios\Authentication\Storage
  */
-class ResourceStorage
+class ResourceStorage extends Session
 {
 
 }
