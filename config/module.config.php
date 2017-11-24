@@ -16,6 +16,9 @@ return [
 
         'factories' => [
 
+            Module::class =>
+                Factory\ModuleFactory::class,
+
             //Services
             \Zend\Authentication\AuthenticationService::class =>
                 InvokableFactory::class,
