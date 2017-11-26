@@ -6,8 +6,8 @@
 namespace MSBios\Authentication\Factory;
 
 use Interop\Container\ContainerInterface;
-use MSBios\Authentication\AuthenticationService;
 use MSBios\Authentication\Module;
+use Zend\Authentication\AuthenticationService;
 use Zend\Authentication\AuthenticationServiceInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
 

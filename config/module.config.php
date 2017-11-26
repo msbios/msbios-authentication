@@ -21,8 +21,6 @@ return [
 
             //Services
             \Zend\Authentication\AuthenticationService::class =>
-                InvokableFactory::class,
-            AuthenticationService::class =>
                 Factory\AuthenticationServiceFactory::class,
 
             // Adapters
@@ -32,6 +30,9 @@ return [
             // Storages
             Storage\ResourceStorage::class =>
                 InvokableFactory::class
+        ],
+        'aliases' => [
+
         ]
     ],
 
