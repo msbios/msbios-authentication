@@ -1,7 +1,7 @@
 {
   "name": "msbios/authentication",
   "description": "MSBios Authentication",
-  "license": "GPL",
+  "license": "MIT",
   "keywords": [
     "php"
   ],
