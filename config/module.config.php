@@ -6,8 +6,9 @@
 
 namespace MSBios\Authentication;
 
-use MSBios\Authentication\Adapter\ResourceAdapter;
-use MSBios\Authentication\Storage\ResourceStorage;
+use MSBios\Authentication\Adapter\CallbackCheckAdapter;
+use MSBios\Authentication\Storage\Session;
+use Zend\Db\Adapter\Adapter;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
@@ -24,33 +25,49 @@ return [
                 Factory\AuthenticationServiceFactory::class,
 
             // Adapters
-            Adapter\ResourceAdapter::class =>
-                Factory\ResourceAdapterFactory::class,
+            Adapter\CallbackCheckAdapter::class =>
+                Factory\CallbackCheckAdapterFactory::class,
 
             // Storages
-            Storage\ResourceStorage::class =>
+            Storage\Session::class =>
                 InvokableFactory::class
-        ],
-        'aliases' => [
-
         ]
     ],
 
     Module::class => [
 
         'default_authentication_storage' =>
-            ResourceStorage::class,
+            Session::class,
 
         'default_authentication_adapter' =>
-            ResourceAdapter::class,
+            CallbackCheckAdapter::class,
 
-        ResourceAdapter::class => [
+        CallbackCheckAdapter::class => [
 
+            /**
+             *
+             */
+            'adapter' => Adapter::class,
+
+            /**
+             *
+             */
             'table_name' => 'acl_t_users',
 
+            /**
+             *
+             */
             'identity_column' => 'username',
 
-            'credential_column' => 'password'
+            /**
+             *
+             */
+            'credential_column' => 'password',
+
+            /**
+             *
+             */
+            'credential_validation_callback' => null
         ]
     ]
 ];

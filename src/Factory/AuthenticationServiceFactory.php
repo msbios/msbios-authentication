@@ -6,8 +6,8 @@
 namespace MSBios\Authentication\Factory;
 
 use Interop\Container\ContainerInterface;
+use MSBios\Authentication\AuthenticationService;
 use MSBios\Authentication\Module;
-use Zend\Authentication\AuthenticationService;
 use Zend\Authentication\AuthenticationServiceInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
@@ -21,11 +21,11 @@ class AuthenticationServiceFactory implements FactoryInterface
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param array|null $options
-     * @return AuthenticationService|AuthenticationServiceInterface
+     * @return AuthenticationService|object|AuthenticationServiceInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        /** @var AuthenticationServiceInterface $authenticationService */
+        /** @var AuthenticationServiceInterface|AuthenticationService $authenticationService */
         $authenticationService = new AuthenticationService;
 
         /** @var array $options */

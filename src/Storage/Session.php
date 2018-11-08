@@ -5,13 +5,13 @@
  */
 namespace MSBios\Authentication\Storage;
 
-use Zend\Authentication\Storage\Session;
+use Zend\Authentication\Storage\Session as DefaultSession;
 
 /**
- * Class ResourceStorage
+ * Class Session
  * @package MSBios\Authentication\Storage
  */
-class ResourceStorage extends Session
+class Session extends DefaultSession
 {
-
+    // ...
 }
