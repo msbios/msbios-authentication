@@ -671,16 +671,16 @@
         },
         {
             "name": "msbios/msbios",
-            "version": "v1.0.6",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/msbios/msbios-msbios.git",
-                "reference": "3db910564d610ee2a0a737cbc94089bc933ef759"
+                "reference": "24fc90f18acce199ca01b31c67dcac13c2b0e1c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/msbios/msbios-msbios/zipball/3db910564d610ee2a0a737cbc94089bc933ef759",
-                "reference": "3db910564d610ee2a0a737cbc94089bc933ef759",
+                "url": "https://api.github.com/repos/msbios/msbios-msbios/zipball/24fc90f18acce199ca01b31c67dcac13c2b0e1c4",
+                "reference": "24fc90f18acce199ca01b31c67dcac13c2b0e1c4",
                 "shasum": ""
             },
             "require": {
@@ -691,7 +691,7 @@
                 "msbios/test": "^1.0"
             },
             "bin": [
-                "bin/msbios.sh"
+                "msbios.sh"
             ],
             "type": "library",
             "autoload": {
@@ -714,7 +714,7 @@
             "keywords": [
                 "php"
             ],
-            "time": "2018-03-07T10:56:01+00:00"
+            "time": "2018-11-08T20:31:25+00:00"
         },
         {
             "name": "msbios/resource",
