@@ -5,11 +5,13 @@
  */
 namespace MSBios\Authentication;
 
+use Zend\Authentication\AuthenticationServiceInterface as DefaultAuthenticationServiceInterface;
+
 /**
  * Interface AuthenticationServiceInterface
  * @package MSBios\Authentication
  */
-interface AuthenticationServiceInterface
+interface AuthenticationServiceInterface extends DefaultAuthenticationServiceInterface
 {
     // ...
 }
