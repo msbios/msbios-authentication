@@ -13,7 +13,9 @@ use Zend\EventManager\EventManagerAwareTrait;
  * Class AuthenticationService
  * @package MSBios\Authentication
  */
-class AuthenticationService extends DefaultAuthenticationService implements EventManagerAwareInterface
+class AuthenticationService extends DefaultAuthenticationService implements
+    AuthenticationServiceInterface,
+    EventManagerAwareInterface
 {
     use EventManagerAwareTrait;
 
