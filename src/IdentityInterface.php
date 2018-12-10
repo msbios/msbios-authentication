@@ -13,6 +13,7 @@ interface IdentityInterface
 {
     /**
      * @return mixed
+     * @deprecated because guest does not have password
      */
     public function getPassword();
 }

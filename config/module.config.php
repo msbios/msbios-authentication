@@ -6,6 +6,7 @@
 
 namespace MSBios\Authentication;
 
+use MSBios\Authentication\Factory\AuthenticationServiceFactory;
 use MSBios\Factory\ModuleFactory;
 use Zend\Authentication\Adapter\DbTable\CallbackCheckAdapter;
 use Zend\Authentication\Storage\Session;
@@ -22,8 +23,10 @@ return [
                 ModuleFactory::class,
 
             //Services
-            \Zend\Authentication\AuthenticationService::class =>
+            AuthenticationService::class =>
                 Factory\AuthenticationServiceFactory::class,
+            // \Zend\Authentication\AuthenticationService::class =>
+            //     Factory\AuthenticationServiceFactory::class,
 
             // Adapters
             CallbackCheckAdapter::class =>
@@ -32,6 +35,10 @@ return [
             // Storages
             Session::class =>
                 InvokableFactory::class
+        ],
+        'aliases' => [
+            \Zend\Authentication\AuthenticationService::class =>
+                AuthenticationService::class,
         ]
     ],
 

@@ -6,20 +6,25 @@
 namespace MSBios\Authentication;
 
 use MSBios\ModuleInterface;
+use Zend\EventManager\EventInterface;
+use Zend\Http\Request as HttpRequest;
 use Zend\Loader\AutoloaderFactory;
 use Zend\Loader\StandardAutoloader;
+use Zend\ModuleManager\Feature\BootstrapListenerInterface;
 
 /**
  * Class Module
  * @package MSBios\Authentication
  */
-class Module implements ModuleInterface
+class Module implements ModuleInterface, BootstrapListenerInterface
 {
     /** @const VERSION */
-    const VERSION = '1.0.15';
+    const VERSION = '1.0.16';
 
     /**
-     * @return mixed
+     * @inheritdoc
+     *
+     * @return array|mixed|\Traversable
      */
     public function getConfig()
     {
@@ -27,7 +32,7 @@ class Module implements ModuleInterface
     }
 
     /**
-     * Return an array for passing to Zend\Loader\AutoloaderFactory.
+     * @inheritdoc
      *
      * @return array
      */
@@ -40,5 +45,18 @@ class Module implements ModuleInterface
                 ],
             ],
         ];
+    }
+
+    /**
+     * @inheritdoc
+     *
+     * @param EventInterface $e
+     * @return array|void
+     */
+    public function onBootstrap(EventInterface $e)
+    {
+        if (! $e->getRequest() instanceof HttpRequest) {
+            return;
+        }
     }
 }
