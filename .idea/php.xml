@@ -80,6 +80,7 @@
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-paginator" />
       <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/contracts" />
     </include_path>
   </component>
 </project>
