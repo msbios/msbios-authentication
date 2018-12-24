@@ -33,8 +33,16 @@ return [
 
             // Storages
             Session::class =>
-                InvokableFactory::class
+                InvokableFactory::class,
+
+            // Listeners
+            ListenerAggregate::class =>
+                Factory\ListenerAggregateFactory::class
         ]
+    ],
+
+    'listeners' => [
+        ListenerAggregate::class
     ],
 
     Module::class => [

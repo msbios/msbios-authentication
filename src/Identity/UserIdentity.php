@@ -12,5 +12,5 @@ namespace MSBios\Authentication\Identity;
 class UserIdentity
 {
     /** @var string */
-    protected static $identity = 'guest';
+    protected static $identity = 'USER';
 }

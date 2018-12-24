@@ -5,13 +5,13 @@
  */
 namespace MSBios\Authentication;
 
-use Zend\EventManager\Event as DefaultEvent;
+use Zend\EventManager\Event;
 
 /**
- * Class Event
+ * Class AuthenticationEvent
  * @package MSBios\Authentication
  */
-class Event extends DefaultEvent
+class AuthenticationEvent extends Event
 {
     /** @const EVENT_AUTHENTICATION */
     const EVENT_AUTHENTICATION = 'EVENT_AUTHENTICATION';
