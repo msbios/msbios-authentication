@@ -5,58 +5,32 @@
 
 namespace MSBios\Authentication;
 
-use MSBios\ModuleInterface;
-use Zend\EventManager\EventInterface;
-use Zend\Http\Request as HttpRequest;
-use Zend\Loader\AutoloaderFactory;
-use Zend\Loader\StandardAutoloader;
-use Zend\ModuleManager\Feature\BootstrapListenerInterface;
-
 /**
  * Class Module
  * @package MSBios\Authentication
  */
-class Module implements ModuleInterface, BootstrapListenerInterface
+class Module extends \MSBios\Module
 {
     /** @const VERSION */
-    const VERSION = '1.0.17';
+    const VERSION = '1.0.18';
 
     /**
      * @inheritdoc
      *
-     * @return array|mixed|\Traversable
+     * @return string
      */
-    public function getConfig()
+    protected function getDir()
     {
-        return include __DIR__ . '/../config/module.config.php';
+        return __DIR__;
     }
 
     /**
      * @inheritdoc
      *
-     * @return array
+     * @return string
      */
-    public function getAutoloaderConfig()
+    protected function getNamespace()
     {
-        return [
-            AutoloaderFactory::STANDARD_AUTOLOADER => [
-                StandardAutoloader::LOAD_NS => [
-                    __NAMESPACE__ => __DIR__,
-                ],
-            ],
-        ];
-    }
-
-    /**
-     * @inheritdoc
-     *
-     * @param EventInterface $e
-     * @return array|void
-     */
-    public function onBootstrap(EventInterface $e)
-    {
-        if (! $e->getRequest() instanceof HttpRequest) {
-            return;
-        }
+        return __NAMESPACE__;
     }
 }
