@@ -6,7 +6,6 @@
 
 namespace MSBios\Authentication;
 
-use MSBios\Factory\ModuleFactory;
 use Zend\Authentication\Adapter\DbTable\CallbackCheckAdapter;
 use Zend\Authentication\Storage\Session;
 use Zend\Db\Adapter\Adapter;
@@ -17,10 +16,6 @@ return [
     'service_manager' => [
 
         'factories' => [
-
-            Module::class =>
-                ModuleFactory::class,
-
             //Services
             AuthenticationService::class =>
                 Factory\AuthenticationServiceFactory::class,
